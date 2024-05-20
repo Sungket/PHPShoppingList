@@ -18,12 +18,18 @@
             $this->important = 'false';
         }
     }
+    $x = 0;
+    $list = [];
 
-    $newItem = new Item($name);
-
-
-    print_r($newItem);
-
-    //next list out the items.
+    if (isset($name)) {
+        $it = new Item($name);
+        $list[$x] = $it;
+        $x++;
+    }
+    // $newItem = new Item($name);
     //first, add the input into an array. Maybe add the input as a name property and add it to an array.
+
+    // $list[] = $newItem;
+    // array_push($list, $newItem);
+    print_r($list);
 ?>
