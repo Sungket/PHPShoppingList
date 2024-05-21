@@ -32,4 +32,21 @@
     // $list[] = $newItem;
     // array_push($list, $newItem);
     print_r($list);
+
+    $countries = array();
+
+    $x = 0;
+
+    do {
+        $countries[$x] = 
+            [
+                "name" => $jsonData["features"][$x]["properties"]["name"],
+                "iso_a2" => $jsonData["features"][$x]["properties"]["iso_a2"],
+                "iso_a3" => $jsonData["features"][$x]["properties"]["iso_a3"],
+                "iso_n3" => $jsonData["features"][$x]["properties"]["iso_n3"],
+            ];
+        $x++;
+    } while ($x < $numCountries);
+
+    echo json_encode($countries);
 ?>
